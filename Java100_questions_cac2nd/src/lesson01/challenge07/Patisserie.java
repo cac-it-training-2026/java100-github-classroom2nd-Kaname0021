@@ -46,69 +46,55 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Patisserie {
-
 	public static void main(String[] args) throws IOException {
 
 		System.out.println("たいへんお待たせしました。");
 		System.out.println("【ポエール・ネルメ】");
 		System.out.println("ただいまより開店です！！");
 
-		int citronStock = 30;
-		int chocolatStock = 30;
-		int pistacheStock = 30;
+		int citron = 30;
+		int choco = 30;
+		int pis = 30;
 
 		System.out.println("\n本日のおすすめ商品です。\n");
-		System.out.println("シトロン      \\250 ・・・ 残り" + citronStock + "個");
-		System.out.println("ショコラ      \\280 ・・・ 残り" + chocolatStock + "個");
-		System.out.println("ピスターシュ  \\320 ・・・ 残り" + pistacheStock + "個");
+		System.out.println("シトロン      \\250 ・・・ 残り" + citron + "個");
+		System.out.println("ショコラ      \\280 ・・・ 残り" + choco + "個");
+		System.out.println("ピスターシュ  \\320 ・・・ 残り" + pis + "個");
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		System.out.println("\nそれぞれ何個ずつ買いますか？（最大30個まで）\n");
-		System.out.print("シトロン      >");
-		String citronBuyCountStr = br.readLine();
-		double citronBuyCount = Double.parseDouble(citronBuyCountStr);
+		System.out.println("\nそれぞれ何個ずつ買いますか？(最大30個まで)\n");
+		System.out.print("シトロン    >");
+		String citronBuystr = br.readLine();
+		double citronBuy = Double.parseDouble(citronBuystr);
 
-		System.out.print("ショコラ      >");
-		String chocolatBuyCountStr = br.readLine();
-		double chocolatBuyCount = Double.parseDouble(chocolatBuyCountStr);
+		System.out.print("ショコラ    >");
+		String chocoBuystr = br.readLine();
+		double chocoBuy = Double.parseDouble(chocoBuystr);
 
-		System.out.print("ピスターシュ  >");
-		String pistacheBuyCountStr = br.readLine();
-		double pistacheBuyCount = Double.parseDouble(pistacheBuyCountStr);
+		System.out.print("ピスターシュ    >");
+		String pisBuystr = br.readLine();
+		double pisBuy = Double.parseDouble(pisBuystr);
 
-		System.out.println("\nシトロン     " + citronBuyCount + "個");
-		System.out.println("ショコラ     " + chocolatBuyCount + "個");
-		System.out.println("ピスターシュ " + pistacheBuyCount + "個");
+		System.out.println("シトロン" + citronBuy + "個");
+		System.out.println("ショコラ" + chocoBuy + "個");
+		System.out.println("ピスターシュ" + pisBuy + "個");
 
-		double totalBuyCount = citronBuyCount + chocolatBuyCount + pistacheBuyCount;
-		int totalPrice = (int) (250 * citronBuyCount + 280 * chocolatBuyCount + 320 * pistacheBuyCount);
+		double sum1 = citronBuy + chocoBuy + pisBuy;
+		int sum2 = (int) (250 * citronBuy + 280 * chocoBuy + 320 * pisBuy);
 
-		System.out.println("\n合計個数    " + totalBuyCount + "個");
-		System.out.println("合計金額   " + totalPrice + "円");
-		System.out.println("\nをお買いあげですね。");
-		System.out.println("承りました。");
+		System.out.println("\n合計個数" + sum1 + "個");
+		System.out.println("合計金額" + sum2 + "円");
+		System.out.println("をお買い上げですね。\n承りました。");
 
-		citronStock = (int) (citronStock - citronBuyCount);
-		chocolatStock = (int) (chocolatStock - chocolatBuyCount);
-		pistacheStock = (int) (pistacheStock - pistacheBuyCount);
+		citron = (int) (citron - citronBuy);
+		choco = (int) (choco - chocoBuy);
+		pis = (int) (pis - pisBuy);
 
 		System.out.println("\n本日のおすすめ商品です。\n");
-		System.out.println("シトロン      \\250 ・・・ 残り" + citronStock + "個");
-		System.out.println("ショコラ      \\280 ・・・ 残り" + chocolatStock + "個");
-		System.out.println("ピスターシュ  \\320 ・・・ 残り" + pistacheStock + "個");
-
-		System.out.println("\n閉店時間となりました。");
-		System.out.println("またのお越しをお待ちしております。");
-		System.out.println("\n売上の割合");
-		System.out.println("売上合計      \\" + totalPrice);
-		System.out.println("\n内訳");
-		System.out.println("シトロン      \\" + (int) (250 * citronBuyCount) + "・・・ "
-				+ (int) ((250 * citronBuyCount) / totalPrice * 100) + "%");
-		System.out.println("ショコラ      \\" + (int) (280 * chocolatBuyCount) + "・・・ "
-				+ (int) ((280 * chocolatBuyCount) / totalPrice * 100) + "%");
-		System.out.println("ピスターシュ  \\" + (int) (320 * pistacheBuyCount) + "・・・ "
-				+ (int) ((320 * pistacheBuyCount) / totalPrice * 100) + "%");
+		System.out.println("シトラン   \\250 ・・・残り" + citron + "個");
+		System.out.println("ショコラ   \\280 ・・・残り" + choco + "個");
+		System.out.println("ピスターシュ   \\320 ・・・残り" + pis + "個");
 	}
 
 }
