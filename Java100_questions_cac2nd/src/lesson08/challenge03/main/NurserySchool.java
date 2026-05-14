@@ -1,4 +1,4 @@
-package lesson08.challenge01;
+package lesson08.challenge03.main;
 
 /**
  * 第8章 保育園のお仕事
